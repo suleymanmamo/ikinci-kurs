@@ -9,9 +9,19 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { ToastrModule } from "ngx-toastr";
 import { NgxSpinnerModule } from "ngx-spinner";
+import { HomeComponent } from "./home/home.component";
+import { UserComponent } from "./user/user.component";
+import { RoteComponent } from "./rote/rote.component";
+import { UserDetailComponent } from "./user/user-detail/user-detail.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UserComponent,
+    RoteComponent,
+    UserDetailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

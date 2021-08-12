@@ -13,7 +13,7 @@ import { HomeComponent } from "./home/home.component";
 import { UserComponent } from "./user/user.component";
 import { RoteComponent } from "./rote/rote.component";
 import { UserDetailComponent } from "./user/user-detail/user-detail.component";
-
+import { IgxButtonModule } from "igniteui-angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +25,10 @@ import { UserDetailComponent } from "./user/user-detail/user-detail.component";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    IgxButtonModule,
     NgxSpinnerModule,
     CommonModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       timeOut: 4000,
       progressBar: true,
@@ -36,10 +37,11 @@ import { UserDetailComponent } from "./user/user-detail/user-detail.component";
       progressAnimation: "decreasing",
       preventDuplicates: true,
       positionClass: "toast-bottom-right",
-    }), // ToastrModule added
+    })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

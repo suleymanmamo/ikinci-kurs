@@ -10,14 +10,14 @@ const routes: Routes = [
   },
   { path: "rote", component: RoteComponent },
   {
-    path: "user",
+    path: "data-binding",
     loadChildren: () =>
       import("./data-binding/data-binding.module").then(
         (m) => m.DataBindingModule
       ),
   },
   {
-    path: "data-binding",
+    path: "user",
     loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
   },
   { path: "**", component: HomeComponent },

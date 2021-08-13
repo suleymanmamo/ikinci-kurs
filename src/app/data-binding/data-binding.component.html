@@ -1,1 +1,60 @@
-<p>data-binding works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+    <h2>One Way Binding <span style="font-size: 0.9rem;">from Component to DOM</span></h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Interpolation</h3>
+        <p>ad: {{ user.name }} soyad: {{ user.surname }}</p>
+        <div>
+          <img height="120px;" src="{{ user.favorite_place_image}}" alt=" favorite_place ">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h3>ProPerty Binding</h3>
+        <input type="text" [value]="user.name">
+      </div>
+
+      <div class="col-md-4">
+        <h3>Attribute Binding</h3>
+        <input type="text" [value]="user.name" [attr.disabled]="!user.isEditable ? 'disabled' : null">
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-4">
+        <h3>Class Binding</h3>
+        <p [class.red]="user.name === 'Sileman' ? true : false">Renk değeri!!!</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Style Binding</h3>
+        <p [style.color]="user.name === 'Sileman' ? 'crimson'  : 'cadetblue'">Style color!</p>
+      </div>
+      <div class="col-md-4">
+        <h3>Event Binding</h3>
+        <input type="text" [value]="user.name" (keyup.enter)="inputSubmit($event)">
+        <button (click)="buttonClicked();">OK .!.</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <hr>
+    <h2>Two way binding </h2>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <h3>ngModel</h3>
+        <input type="text" [(ngModel)]="user.name">
+        <p>{{ user.name }}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,11 @@
-<div class="row text-center">
+<app-navbar></app-navbar>
+<div class="row" style="width: 100%;">
   <div class="col-md-3">
-    <h2 routerLink="home">go to Home!</h2>
+    <app-sidebar></app-sidebar>
   </div>
-  <div class="col-md-3">
-    <h2 routerLink="rote">go to Rote</h2>
-  </div>
-  <div class="col-md-3">
-    <h2 routerLink="user">go to User</h2>
-  </div>
-  <div class="col-md-3">
-    <h2 [routerLink]="['user/user-detail']">go to Detail</h2>
+  <div class="col-md-9">
+    <router-outlet></router-outlet>
   </div>
 </div>
 
-
 <ngx-spinner></ngx-spinner>
-<router-outlet></router-outlet>

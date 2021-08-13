@@ -1,0 +1,28 @@
+<div class="content-wrap">
+  <igx-nav-drawer id="navigation" #drawer [isOpen]="true">
+    <ng-template igxDrawer>
+      <nav>
+        <span igxDrawerItem [isHeader]="true">Sidebar</span>
+        <span igxDrawerItem igxRipple routerLink="home">
+          <igx-icon fontSet="material">home</igx-icon>
+          <span>home</span>
+        </span>
+        <span igxDrawerItem igxRipple routerLink="rote">
+          <igx-icon fontSet="material">info</igx-icon>
+          <span>role</span>
+        </span>
+        <span igxDrawerItem igxRipple routerLink="user">
+          <igx-icon fontSet="material">account_circle</igx-icon>
+          <span>user</span>
+        </span>
+        <span igxDrawerItem igxRipple routerLink="data-binding">
+          <igx-icon fontSet="material">donut_large</igx-icon>
+          <span>data-binding</span>
+        </span>
+      </nav>
+    </ng-template>
+  </igx-nav-drawer>
+  <main>
+    <!-- app content -->
+  </main>
+</div>

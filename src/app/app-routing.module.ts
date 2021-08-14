@@ -20,6 +20,11 @@ const routes: Routes = [
     path: "user",
     loadChildren: () => import("./user/user.module").then((m) => m.UserModule),
   },
+  {
+    path: "storage",
+    loadChildren: () =>
+      import("./storage/storage.module").then((m) => m.StorageModule),
+  },
   { path: "**", component: HomeComponent },
 ];
 

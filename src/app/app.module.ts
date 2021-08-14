@@ -9,6 +9,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { RoteComponent } from "./rote/rote.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
+import { CookieService } from "ngx-cookie-service";
 import {
   IgxNavbarModule,
   IgxButtonModule,
@@ -50,7 +51,7 @@ import {
     }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

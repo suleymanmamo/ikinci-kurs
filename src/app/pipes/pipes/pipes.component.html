@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="col-md-2">
+    <h3>normal</h3>
+    <p>{{ title }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>lowercase</h3>
+    <p> {{ title | lowercase }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>titlecase</h3>
+    <p> {{ title | titlecase }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>uppercase</h3>
+    <p> {{ title | uppercase }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>Date</h3>
+    <p> {{ today | date: "dd/MMMM/yyyy" }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>currency</h3>
+    <p> {{ cashVal }}</p>
+    <p> {{ cashVal | currency }}</p>
+  </div>
+  <div class="col-md-3">
+    <h3>Json</h3>
+    <p>Without Pipe</p>
+    <pre>{{ object }}</pre>
+    <br>
+    <p>With Pipe</p>
+    <pre>{{ object | json }}</pre>
+  </div>
+  <div class="col-md-2">
+    <h3>percent</h3>
+    <p>{{ percentVal | percent }}</p>
+  </div>
+  <div class="col-md-2">
+    <h3>slice</h3>
+    <p>{{ cityName }}</p>
+    <p>{{ cityName | slice: 0:4 }}</p>
+  </div>
+  <div class="col-md-3">
+    <h3>Custom</h3>
+    <p>{{cash | tl }}</p>
+    <br>
+    <h4>Cities</h4>
+    <ul>
+      <li *ngFor="let city of cities | myfiltering : 'a'">{{ city }}</li>
+    </ul>
+  </div>
+</div>

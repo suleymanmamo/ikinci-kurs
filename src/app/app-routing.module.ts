@@ -25,6 +25,21 @@ const routes: Routes = [
     loadChildren: () =>
       import("./storage/storage.module").then((m) => m.StorageModule),
   },
+  {
+    path: "pipes",
+    loadChildren: () =>
+      import("./pipes/pipes.module").then((m) => m.PipesModule),
+  },
+  {
+    path: "parents",
+    loadChildren: () =>
+      import("./parents/parents.module").then((m) => m.ParentsModule),
+  },
+  {
+    path: "forms",
+    loadChildren: () =>
+      import("./forms/forms.module").then((m) => m.AngularFormsModule),
+  },
   { path: "**", component: HomeComponent },
 ];
 

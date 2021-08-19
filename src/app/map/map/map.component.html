@@ -1,0 +1,39 @@
+<div class="row mt-4">
+  <div class="col-md-4">
+    <app-city></app-city>
+  </div>
+  <div class="col-md-4">
+    <app-plaka></app-plaka>
+  </div>
+  <div class="col-md-4">
+    <app-region></app-region>
+  </div>
+  <div class="col-md-12">
+    <form class="form-group" #cityForm="ngForm" (ngSubmit)="save(cityForm)">
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input type="text" name="id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter Id" ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="name">name</label>
+        <input type="text" name="name" class="form-control" id="exampleInputPassword1" placeholder="Enter Name" ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="region">Region</label>
+        <input type="text" name="region" class="form-control" id="exampleInputPassword1" placeholder="Enter Region"
+          ngModel>
+      </div>
+
+      <div class="form-group">
+        <label for="plaka">Plaka</label>
+        <input type="number" name="plaka" class="form-control" id="exampleInputPassword1" placeholder="Enter Region"
+          ngModel>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>

@@ -1,3 +1,8 @@
-<p>user-list works!</p>
-
-<button igxButton="flat">welcome to user-list component</button>
+<div class="col-md-12">
+  <ul>
+    <li *ngFor="let user of userData ? userData : []">
+      name: {{ user.name }} - surname: {{ user.surname }} -- email: {{ user.email }} -- birth day:
+      {{user.birthDay | date : "medium":"":"tr-TR"}}
+    </li>
+  </ul>
+</div>

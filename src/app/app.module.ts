@@ -6,7 +6,6 @@ import { CommonModule } from "@angular/common";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastrModule } from "ngx-toastr";
 import { NgxSpinnerModule } from "ngx-spinner";
-import { RoteComponent } from "./rote/rote.component";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { CookieService } from "ngx-cookie-service";
@@ -19,14 +18,11 @@ import {
   IgxRippleModule,
   IgxToggleModule,
 } from "igniteui-angular";
+import { AuthInterceptor, UserService } from "src/libs";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    RoteComponent,
-    NavbarComponent,
-    SidebarComponent,
-  ],
+  declarations: [AppComponent, NavbarComponent, SidebarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,6 +31,7 @@ import {
     IgxIconModule,
     CommonModule,
     IgxButtonModule,
+    HttpClientModule,
     IgxLayoutModule,
     IgxNavigationDrawerModule,
     IgxRippleModule,
@@ -51,7 +48,15 @@ import {
     }),
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [CookieService],
+  providers: [
+    CookieService,
+    UserService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,7 +1,17 @@
 <div class="sample-column" style="width: 100%;">
-  <igx-navbar [isActionButtonVisible]="true" title="Menü" style="text-align: center;">
+
+  <igx-navbar [isActionButtonVisible]="true" title="Menü" style="text-align: center;" actionButtonIcon="menu">
+
+    <igx-select [value]="lang" (onSelection)='langChange.emit($event.newSelection.value)'>
+      <igx-select-item value="tr">tr</igx-select-item>
+      <igx-select-item value="en">en</igx-select-item>
+    </igx-select>
+
     <igx-icon>search</igx-icon>
     <igx-icon (click)="toogleLogin()">perm_identity</igx-icon>
     <igx-icon>more_vert</igx-icon>
+    <igx-action-icon>
+      <igx-icon class="customIcon" routerLink="home">home</igx-icon>
+    </igx-action-icon>
   </igx-navbar>
 </div>

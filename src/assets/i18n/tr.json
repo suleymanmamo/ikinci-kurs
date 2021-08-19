@@ -1,0 +1,9 @@
+{
+    "app":{
+        "title":"burası başlıktır"
+    },
+    "toastr":{
+        "title":"Toastr eğlenceli!",
+        "message":"Merhaba sevgili dünya"
+    }
+}

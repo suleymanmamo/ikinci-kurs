@@ -1,0 +1,51 @@
+<!-- <div class="container">
+  <h1>Kayıt</h1>
+  <form (ngSubmit)="save(myForm)" #myForm=ngForm>
+    <div class="form-group">
+      <label for="username">İsim</label>
+      <input type="text" class="form-control" id="username" name="username" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <label for="age">Yaş</label>
+      <input type="number" class="form-control" id="age" name="age" ngModel>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-success btn-lg btn-block">Kayıt ol</button>
+  </form>
+</div> -->
+
+
+<!------------------------------ reactive Form -------------------------->
+<div class="container">
+  <div class="row">
+    <h2>Reactive Forms - Register</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="save(registerForm)">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">user Name:</span>
+        </div>
+        <input type="text" class="form-control" formControlName="userName" aria-label="Default"
+          aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div *ngIf="registerForm?.controls?.userName?.errors?.required && registerForm?.controls?.userName?.dirty"
+        class="alert alert-danger" role="alert">**Bu alanı
+        doldurmak zorundasın</div>
+      <div *ngIf="registerForm?.controls?.userName?.errors?.blacklist && registerForm?.controls?.userName?.dirty"
+        class="alert alert-danger" role="alert">Ğ\ğ harfini silin</div>
+      <div *ngIf="registerForm?.controls?.userName?.errors?.whitespace && registerForm?.controls?.userName?.dirty"
+        class="alert alert-danger" role="alert">boşlukları sil</div>
+      <div *ngIf="registerForm?.controls?.userName?.errors?.UserNameExist" class="alert alert-danger" role="alert">
+        Farklı bir kullanıcı adı girin</div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">age:</span>
+        </div>
+        <input type="number" class="form-control" formControlName="age" formControlName="age" aria-label="Default"
+          aria-describedby="inputGroup-sizing-default">
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!registerForm.valid">Kayıt ol</button>
+    </form>
+
+  </div>
+</div>

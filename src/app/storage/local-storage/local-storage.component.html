@@ -1,0 +1,28 @@
+<div class="row m-5">
+  <div class="col-md-5">
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <hr>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-danger" (click)="setItem(name);">set ıtem</button>
+      <button type="button" class="btn btn-warning" (click)="getItem();">get ıtem</button>
+      <button type="button" class="btn btn-success" (click)="clearItem();">clear name ıtem</button>
+    </div>
+    <p>ng model : {{name}}</p>
+    <p>local Storage value : {{localStorageVal}}</p>
+  </div>
+
+  <div class="col-md-5">
+    name: <input type="text" class="form-control" [(ngModel)]="objName">
+    surname: <input type="text" class="form-control" [(ngModel)]="objSurname">
+    Age: <input type="number" class="form-control" [(ngModel)]="objAge"><br>
+    <button type="button" class="btn btn-warning" (click)="setObject()">Set object</button>
+    <button type="button" class="btn btn-dark" (click)="getObject()">Get object</button>
+    <br>
+    object value : {{ localStorageObjVal }}
+  </div>
+
+  <div class="col-md-2">
+    <button class="btn btn-primary btn-lg" [routerLink]="['../cookie']">Go to Cookie</button>
+  </div>
+</div>

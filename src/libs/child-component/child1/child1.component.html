@@ -1,0 +1,7 @@
+<div *ngIf="data">{{ data?.name }} kişisi
+  <p *ngIf="data?.status">Başarılı</p>
+  <p *ngIf="!data?.status">Başarısızdır</p>
+</div>
+
+<!-- <button class="btn btn-primary btn-lg" (click)="emitForm($event)">reset</button> -->
+<button class="btn btn-dark btn-lg" (click)="resetForm.emit(data.name)">reset</button>

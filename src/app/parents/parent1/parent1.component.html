@@ -1,0 +1,24 @@
+<div class="row mt-5">
+  <div class="col-md-4">
+    isim : <input type="text" [(ngModel)]="name" class="form-control" placeholder="isim girin"
+      aria-label="default input example">
+  </div>
+  <div class="col-md-4">
+    başarı durumu :
+    <select [(ngModel)]="successStatus" class="form-select" aria-label="Default select example">
+      <option value="0" selected>seçin</option>
+      <option [ngValue]="true">Başarılı</option>
+      <option [ngValue]="false">başarısız</option>
+    </select>
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-danger" (click)="calculate()">Çalıştır</button>
+  </div>
+  <div class="col-md-2">
+    <button type="button" class="btn btn-warning" (click)="child1.alertSth()">Çalıştır</button>
+  </div>
+  <hr style="margin-top: 2%;"><br>
+  <div class="col-md-12">
+    <app-child1 [data]="calculateData" (resetForm)="resetParentForm($event)"></app-child1>
+  </div>
+</div>

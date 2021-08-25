@@ -1,0 +1,19 @@
+<div class="row m-5">
+  <div class="col-md-5">
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <hr>
+    <button type="button" class="btn btn-outline-danger" (click)="setItem(name)">set ıtem</button>
+    <button type="button" class="btn btn-outline-warning" (click)="getItem()">get ıtem</button>
+    <button type="button" class="btn btn-outline-success" (click)="clearItem()">clear ıtem</button>
+    <button type="button" class="btn btn-outline-dark" (click)="clearAll()">clear all</button><br>
+    <button type="button" class="btn btn-outline-primary" (click)="checkNameCookie()">check Name Cookie</button><br>
+    <p>name : {{ name }}</p>
+    <p> cookie value: {{ cookieValue }}</p>
+    <p>isExist: {{ isCookieExist }}</p>
+  </div>
+  <div class="col-md-4">
+    <button [routerLink]="['../local-storage']" type="button" class="btn btn-primary btn-block">Go to
+      local</button>
+  </div>
+</div>
